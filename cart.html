@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple JS Cart</title>
+
+    <link rel="stylesheet" href="cart.css">
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Ekart</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+           
+            
+          </ul>
+         
+        </div>
+      </div>
+    </nav>
+
+    <br><br>
+    
+    <button class="btn btn-outline-dark" onclick="myFunction()">Cart</button>
+
+<div id="myDIV">
+
+<div id="cart-items"></div>
+</div>
+
+<template id="template-cart">
+    <div class="c-item">
+      <div class="c-name"></div>
+      <button class="c-del cart">Delete</button>
+      <input class="c-qty" type="number" min="0"/>
+    </div>
+    </template>
+    <template id="template-cart-checkout">
+      <button class="c-empty cart" onclick="cart.nuke()">Empty</button>
+      <button class="c-checkout cart" onclick="cart.checkout()">Checkout</button>
+    </template>
+</div>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+    
+    <div id="cart-wrap">
+    
+      <div id="cart-products"></div>
+
+ 
+    <template id="template-product">
+      <div class="cart">
+    <div class="p-item">
+      <img class="p-img"  width="200px" height="300px">
+      <div class="p-name"></div>
+      <div class="p-desc"></div>
+      <div class="p-price"></div>
+      <button class="cart p-add">Add To Cart</button>
+    </div>
+  </div>
+    </template>
+
+   
+    
+  </body>
+</html>

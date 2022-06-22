@@ -1,0 +1,15 @@
+<div id="cart-items"></div>
+</div>
+
+
+<template id="template-cart">
+    <div class="c-item">
+      <div class="c-name"></div>
+      <button class="c-del cart">X</button>
+      <input class="c-qty" type="number" min="0"/>
+    </div>
+    </template>
+    <template id="template-cart-checkout">
+      <button class="c-empty cart" onclick="cart.nuke()">Empty</button>
+      <button class="c-checkout cart" onclick="cart.checkout()">Checkout</button>
+    </template>
